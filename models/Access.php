@@ -59,9 +59,8 @@ class Access extends \yii\db\ActiveRecord
         if($model->creator == Yii::$app->user->id)
             return self::ACCESS_CREATOR;
         $accessCalendar = self::find()
-            ->withCreator($model->creator)
+            ->withDate($model->date_event)
             ->withGuest(Yii::$app->user->id)
-            ->withDateevent($model->date_event)
             ->exists();
         if($accessCalendar)
             return self::ACCESS_GUEST;

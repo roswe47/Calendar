@@ -54,7 +54,6 @@ class User extends ActiveRecord implements IdentityInterface
             'password' => _('Пароль'),
             'salt' => _('Соль'),
             'access_token' => _('Ключ авторизации'),
-            'create_date' => _('Дата регистрации'),
         ];
     }
     /**

@@ -68,25 +68,23 @@ class CalendarController extends Controller
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'creator' => Yii::$app->user->id,
             'dataProvider' => $dataProvider,
         ]);
     }
 
-    public function actionFriendshedule($id, $date){
+    public function actionFriendshedule($id){
         $searchModel = new CalendarSearch();
         $dataProvider = $searchModel->search([
            'CalendarSearch' => [
                'creator' => $id,
-               'data_event' => $date,
                'access' => [
-                   'user_gest' => Yii::$app->user->id
+                   'user_gest' => Yii::$app->user->id,
                ]
            ]
         ]);
 
         return $this->render('index', [
-            'model' => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider
         ]);
     }

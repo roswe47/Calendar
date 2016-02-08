@@ -14,13 +14,6 @@ class AccessQuery extends \yii\db\ActiveQuery
         $this->andWhere('[[status]]=1');
         return $this;
     }*/
-    public function withCreator($id_creator)
-    {
-        return $this->andWhere(
-            'user_owner = :id_creator',
-            [':id_creator' => $id_creator]
-        );
-    }
 
     public function withGuest($id_guest)
     {
@@ -30,11 +23,11 @@ class AccessQuery extends \yii\db\ActiveQuery
         );
     }
 
-    public function withDateevent($date_event)
+    public function withDate($date)
     {
         return $this->andWhere(
-            'date_event = :date_event',
-            [':date_event' => $date_event]
+            'date = :date',
+            [':date' => $date]
         );
     }
 

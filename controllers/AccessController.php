@@ -44,6 +44,16 @@ class AccessController extends Controller
         ]);
     }
 
+    public function actionFrienslist(){
+        $searchModel = new AccessSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Displays a single Access model.
      * @param integer $id

@@ -64,7 +64,7 @@ class Calendar extends \yii\db\ActiveRecord
     }
 
     public function getAccess(){
-        return $this->hasMany(Access::className(), ['id' => 'user_gest']);
+        return $this->hasMany(Access::className(), ['user_gest' => 'id', 'date' => 'date_event']);
     }
 
     public function getCreator(){

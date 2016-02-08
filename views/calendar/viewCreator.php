@@ -29,8 +29,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'text',
-            'creator',
+            'text:ntext',
+            [
+                'attribute' => 'creator',
+                'format' => 'raw',
+                'value' => Html::a(
+                    $model->user->name . " " . $model->user->surname,
+                    ['/calendar/mynotes/']
+                )
+            ],
             'date_event',
         ],
     ]) ?>

@@ -27,7 +27,7 @@ class m160201_015339_create_access extends Migration
                           `id` INT NOT NULL AUTO_INCREMENT,
                           `user_owner` INT NOT NULL,
                           `user_gest` INT NOT NULL,
-                          `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                          `date` DATE NOT NULL,
                           PRIMARY KEY (`id`),
                           INDEX `fk_tbl_access_2_idx` (`user_gest` ASC),
                           INDEX `fk_tbl_access_1_idx` (`user_owner` ASC))
