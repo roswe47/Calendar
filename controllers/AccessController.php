@@ -78,14 +78,11 @@ class AccessController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            $model2= new Calendar();
-            $all_mynotes = $model2->getDates(Yii::$app->user->id);
-            print_r($all_mynotes); exit();
+            $all_mynotes = Calendar::getDates(Yii::$app->user->id);
             $all_users = User::find()->where('id !='.Yii::$app->user->id)->asArray()->all();
-//            for($i=0, $len=count($all_users); $i < $len; $i++)
-//                if((int)$all_users[$i]['id'] === Yii::$app->user->id)
-//                    unset($all_users[$i]);
-            //print_r($all_users);exit();
+//            print_r($all_mynotes);
+//            print_r($all_users);
+//            exit();
             if($all_mynotes) {
                 return $this->render('create', [
                     'model' => $model,

@@ -22,7 +22,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form
             ->field($model, 'date')
-            ->dropDownList(ArrayHelper::map($all_mynotes, 'id', 'date_event'))
+            ->dropDownList(ArrayHelper::map($all_mynotes, 'date_event', 'date_event'))
     ?>
 
     <div class="form-group">

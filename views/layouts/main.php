@@ -42,8 +42,8 @@ AppAsset::register($this);
                                 !Yii::$app->user->isGuest ?
                                 [
                                     ['label' => 'I was invited to', 'url' => ['/access/index']],
-                                    ['label' => 'My friends Schedules', 'url' => ['/calendar/view']],
-                                    ['label' => 'Add friend', 'url' => ['/access/create']],
+                                    //['label' => 'My friends Schedules', 'url' => ['/calendar/view']],
+                                    ['label' => 'Add friend & Share Schedules on Date', 'url' => ['/access/create']],
                                     [
                                         'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                                         'url' => ['/site/logout'],

@@ -78,14 +78,12 @@ class Calendar extends \yii\db\ActiveRecord
                         ->all();
     }
 
-    public function getDates($creator_id){
+    public static function getDates($creator_id){
         return self::find()
-            //->select('date_event')
-            //->withCreator($creator_id)
-            ->where(['date_event' => date('yy-mm-dd HH:mm:ss')])
-            //->withCreator($creator_id)
+            ->select("DISTINCT(DATE(date_event)) AS date_event")
+            ->withCreator($creator_id)
+            ->orderBy('date_event')
             ->asArray()
-            //->orderBy('date_formatted')
             ->all();
     }
 
