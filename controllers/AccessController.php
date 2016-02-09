@@ -44,9 +44,11 @@ class AccessController extends Controller
         ]);
     }
 
-    public function actionFrienslist(){
+    public function actionFriendslist(){
         $searchModel = new AccessSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search([
+            'AccessSearch' => ['user_gest' => Yii::$app->user->id],
+        ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

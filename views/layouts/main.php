@@ -41,7 +41,7 @@ AppAsset::register($this);
                                 ],
                                 !Yii::$app->user->isGuest ?
                                 [
-                                    ['label' => 'I was invited to', 'url' => ['/access/index']],
+                                    ['label' => 'I was invited to', 'url' => ['/access/friendslist']],
                                     //['label' => 'My friends Schedules', 'url' => ['/calendar/view']],
                                     ['label' => 'Add friend & Share Schedules on Date', 'url' => ['/access/create']],
                                     [

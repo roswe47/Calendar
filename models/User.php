@@ -174,6 +174,18 @@ class User extends ActiveRecord implements IdentityInterface
         $this->access_token = Yii::$app->security->generateRandomString();
     }
 
+    public function getOwners(){
+        return $this->hasMany(Access::className(), ['user_owner' => 'id']);
+    }
+
+    public function getGuests(){
+        return $this->hasMany(Access::className(), ['user_gest' => 'id']);
+    }
+
+    public function getSchedules(){
+        return $this->hasMany(Calendar::className(), ['creator' => 'id']);
+    }
+
     /**
      * @inheritdoc
      * @return \app\models\query\UserQuery the active query used by this AR class.

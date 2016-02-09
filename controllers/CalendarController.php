@@ -72,7 +72,7 @@ class CalendarController extends Controller
         ]);
     }
 
-    public function actionFriendshedule($id){
+    public function actionFriendshedules($id){
         $searchModel = new CalendarSearch();
         $dataProvider = $searchModel->search([
            'CalendarSearch' => [

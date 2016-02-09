@@ -68,11 +68,11 @@ class Access extends \yii\db\ActiveRecord
     }
 
     public function getOwner(){
-        return $this->hasMany(User::className(), ['id' => 'user_owner']);
+        return $this->hasOne(User::className(), ['id' => 'user_owner']);
     }
 
     public function getGuest(){
-        return $this->hasMany(User::className(), ['id' => 'user_gest']);
+        return $this->hasOne(User::className(), ['id' => 'user_gest']);
     }
 
     /**
