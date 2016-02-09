@@ -78,6 +78,17 @@ class Calendar extends \yii\db\ActiveRecord
                         ->all();
     }
 
+    public function getDates($creator_id){
+        return self::find()
+            //->select('date_event')
+            //->withCreator($creator_id)
+            ->where(['date_event' => date('yy-mm-dd HH:mm:ss')])
+            //->withCreator($creator_id)
+            ->asArray()
+            //->orderBy('date_formatted')
+            ->all();
+    }
+
     /**
      * @inheritdoc
      * @return \app\models\query\CalendarQuery the active query used by this AR class.

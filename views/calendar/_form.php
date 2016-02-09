@@ -12,18 +12,28 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'date_event')->widget(\yii\jui\DatePicker::className(),
+    <?= $form->field($model, 'date_event')->widget(\janisto\timepicker\TimePicker::className(),
                                                                 [
                                                                     'attribute'  => 'date_event',
                                                                     'value'  => 'date_event',
-                                                                    'options' => [
+                                                                    'mode' => 'datetime',
+                                                                    'clientOptions' => [
                                                                         'placeholder' => 'Please, select a planned date ...',
                                                                         'todayHighlight' => true,
                                                                         //'template' => ,
-                                                                        'class' => 'form-control'
+                                                                        'class' => 'form-control',
+                                                                        'dateFormat' => 'yy-mm-dd',
+                                                                        'timeFormat' => 'HH:mm:ss',
+                                                                        'showSecond' => true,
                                                                     ],
+//                                                                    'mode' => 'datetime',
+//                                                                    'clientOptions'=>[
+//                                                                        'dateFormat' => 'yy-mm-dd',
+//                                                                        'timeFormat' => 'HH:mm:ss',
+//                                                                        'showSecond' => true,
+//                                                                    ],
                                                                     'language' => 'ru',
-                                                                    'dateFormat' => 'yyyy-MM-dd',
+                                                                    //'dateFormat' => 'yyyy-MM-dd',
                                                                 ])?>
 
     <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
