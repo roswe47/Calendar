@@ -28,7 +28,7 @@ class m160211_205038_create_login_history extends Migration
                           `user_id` INT NOT NULL,
                           `date_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                           PRIMARY KEY (`id`),
-                          UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC))
+                          INDEX `fk_clndr_login_history_1_idx` (`user_id` ASC))
                         ENGINE = InnoDB CHARACTER SET UTF8;
                         ");
     }
